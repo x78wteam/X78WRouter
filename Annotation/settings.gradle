@@ -1,2 +1,2 @@
-include ':app', ':annotation', ':testlib'
+include ':app', ':testlib'
 rootProject.name='Annotation'

@@ -1,23 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
-//推送到Bintray配置
-publish {
-    //你的账户bintray下某个组织id
-    userOrg = 'x78w'
-    repoName = 'BingorRouter'
-    //Maven仓库下库的包名,一本与包名相同
-    groupId = 'com.bingor.testlib'
-    //项目名称
-    artifactId = 'TestLib'
-    //版本号
-    publishVersion = '0.0.1'
-    //项目介绍，可以不写
-    desc = '用于Android路由的注解'
-    //项目主页，可以不写
-    website = 'https://github.com/x78wteam/X78WRouter'
-}
-
 android {
     compileSdkVersion 28
 
@@ -26,7 +9,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -48,4 +31,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+//推送到Bintray配置
+publish {
+    //你的账户bintray下某个组织id
+    userOrg = 'givemeabug'
+//    repoName = 'maven'
+    //Maven仓库下库的包名,一本与包名相同
+    groupId = 'com.bingor'
+    //项目名称
+    artifactId = 'TestLib'
+    //版本号
+    publishVersion = '1.0.0'
+    //项目介绍，可以不写
+    desc = '用于Android路由的注解'
+    //项目主页，可以不写
+    website = 'https://github.com/x78wteam/X78WRouter'
 }
