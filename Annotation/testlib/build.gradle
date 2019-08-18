@@ -36,7 +36,7 @@ dependencies {
 //推送到Bintray配置
 publish {
     //你的账户bintray下某个组织id
-    userOrg = 'givemeabug'
+    userOrg = 'x78w'
 //    repoName = 'maven'
     //Maven仓库下库的包名,一本与包名相同
     groupId = 'com.bingor'
