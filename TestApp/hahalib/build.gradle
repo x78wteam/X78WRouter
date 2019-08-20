@@ -3,19 +3,30 @@ apply plugin: 'com.novoda.bintray-release'
 
 //推送到Bintray配置
 publish {
-    //你的账户bintray下某个组织id
-    userOrg = 'x78w'
-    //Maven仓库下库的包名,一本与包名相同
-    groupId = 'com.bingor'
-    //项目名称
-    artifactId = 'hahalib'
-    //版本号
-    publishVersion = '1.0.0'
-    //项目介绍，可以不写
-    desc = ''
-    //项目主页，可以不写
-    website = ''
+    repoName = 'CodeRep' //maven仓库名
+    userOrg = "orgnamelll" //bintray.com注册的用户名
+    groupId = "com.bingor" //jcenter上的路径
+    artifactId = 'hahalib2' //项目名称
+    publishVersion = "1.0.0" //版本号
+    desc = "a simple utils tool" //描述，选填
+    website = "https://github.com/x78wteam/X78WRouter" //主页，选填
 }
+
+
+
+// 特别注意：保持你的library module的名字同artifactId一样
+// 1. 背景
+// 在Bintray上你的项目的maven-metadata.xml文件的路径=gruopId+"/"+module名称
+// 如你的groupId=scut.carson_ho，artifactId是CircileView，但module名称是circlelibrary
+// 此时，项目文件在scut.carson_ho.CircileView目录下的，但maven-metadata.xml文件却是在scut.carson_ho.circlelibrary目录下的。
+// 2. 冲突：若你有多个项目groupId一样 & artifactId不一样，但module名称都是library的话，maven-metadata.xml文件的地址可能会一样，即都是：gruopId+"/"+module名称，那么就可能产生冲突
+// 3. 解决方案：保持module名称和artifactId一致
+
+
+
+
+
+
 
 android {
     compileSdkVersion 28
