@@ -1,23 +1,16 @@
 apply plugin: 'java-library'
-//apply plugin: 'com.novoda.bintray-release'
-//
-////推送到Bintray配置
-//publish {
-//    //你的账户bintray下某个组织id
-//    userOrg = 'x78w'
-//    repoName = 'BingorRouter'
-//    //Maven仓库下库的包名,一本与包名相同
-//    groupId = 'com.bingor.annotation'
-//    //项目名称
-//    artifactId = 'Annotation'
-//    //版本号
-//    publishVersion = '0.0.1'
-//    //项目介绍，可以不写
-//    desc = '用于Android路由的注解'
-//    //项目主页，可以不写
-//    website = 'https://github.com/x78wteam/X78WRouter'
-//}
+apply plugin: 'com.novoda.bintray-release'
 
+//推送到Bintray配置
+publish {
+    repoName = 'X78WRouter'
+    userOrg = "x78w"
+    groupId = "com.bingor"
+    artifactId = 'x78wAnnotation'
+    publishVersion = "0.0.1" //版本号
+    desc = "annotation for x78wRouter" //描述，选填
+    website = "https://github.com/x78wteam/X78WRouter/tree/master/Annotation"
+}
 
 
 dependencies {
@@ -26,18 +19,3 @@ dependencies {
 
 sourceCompatibility = "7"
 targetCompatibility = "7"
-
-//gradlew clean build bintrayUpload -PbintrayUser=X78W -PbintrayKey=ee95c270e1127bc0fccff6222c3659232f0881a3 -PdryRun=false
-//
-//gradlew.bat clean build bintrayUpload
-//-PbintrayUser=carson-ho  // Binary用户名
-//-PbintrayKey=************* // Binary上的API key，具体获取见下说明
-//-PdryRun=false
-//
-//Could not create package : HTTP/1.1 404 Not Found [message:Subject  was not found]
-//Could not create package  HTTP/1.1 400 Bad Request [message:Please enter a valid VCS URL for your package.]
-// Could not upload to 'https://api.bintray.com/content/x78w/BingorRouter/BingorRouterAnnotation/0.0.1/property(class java/lang/String, fixed(class java/lang/String, com/bingor/annotation))/property(class java.lang.String, fixed(class java.lang.String, BingorRouterAnnotation))/property(class java.lang.String,
-// fixed(class java.lang.String, 0.0.1))/property(class java.lang.String, fixed(class java.lang.String, BingorRouterAnnotation))-property(class java.lang.String, fixed(class java.lang.String, 0.0.1)).pom': HTTP/1.1 400 Bad Request [message:Unable to upload files: Maven group, artifact or version defined in the
-// pom file do not match the file path 'property(class java/lang/String, fixed(class java/lang/String, com/bingor/annotation))/property(class java.lang.String, fixed(class java.lang.String, BingorRouterAnnotation))/property(class java.lang.String, fixed(class java.lang.String, 0.0.1))/property(class java.lang.
-//String, fixed(class java.lang.String, BingorRouterAnnotation))-property(class java.lang.String, fixed(class java.lang.String, 0.0.1)).pom']
-
