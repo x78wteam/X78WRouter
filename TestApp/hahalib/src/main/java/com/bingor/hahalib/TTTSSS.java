@@ -5,4 +5,5 @@ package com.bingor.hahalib;
  */
 public class TTTSSS {
     public void aaa(){}
+    public void bbb(){}
 }
